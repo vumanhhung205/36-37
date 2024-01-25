@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="max-width: 400px; margin: 50px auto; text-align: center;">
+        <label for="answer">Mời nhập câu tl:</label>
+        <input type="text" id="answer" />
+        <button onclick="checkAnswer()">Kiểm tra</button>
+        <p id="result"></p>
+
+        <script>
+            function checkAnswer() {
+                let answerInput = document.getElementById('answer');
+                let answerValue = answerInput.value.trim();
+                let resultMessage = document.getElementById('result');
+                if (answerValue.length > 10) {
+                    resultMessage.style.color = 'red';
+                    resultMessage.textContent = 'không hợp lệ .';
+                } else {
+                    resultMessage.style.color = 'green';
+                    resultMessage.textContent = 'hợp lệ.';
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
